@@ -22,19 +22,29 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "clientId")
     private Client client;
+
     private String typePresta;
     private String designation;
     private int nbDays;
     private float unitPrice;
     @Column(columnDefinition = "BIT")
     private int state;
-
+    
     public long getId() {
         return this.id;
     }
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    
+    public Client getClient() {
+        return this.client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
 
@@ -78,6 +88,20 @@ public class Order {
         this.state = state;
     }
 
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", client='" + getClient() + "'" +
+            ", typePresta='" + getTypePresta() + "'" +
+            ", designation='" + getDesignation() + "'" +
+            ", nbDays='" + getNbDays() + "'" +
+            ", unitPrice='" + getUnitPrice() + "'" +
+            ", state='" + getState() + "'" +
+            "}";
+    }
 
     
 }
