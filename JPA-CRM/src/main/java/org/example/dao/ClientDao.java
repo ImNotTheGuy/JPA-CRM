@@ -8,6 +8,7 @@ import javax.persistence.Query;
 
 import org.example.jpa.EntityManagerSingleton;
 import org.example.models.Client;
+import org.hibernate.annotations.SourceType;
 
 public class ClientDao {
 
@@ -75,5 +76,6 @@ public class ClientDao {
         tx.commit();
 
     }
+
 
 }
