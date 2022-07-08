@@ -14,8 +14,11 @@ public class TestTableRelations {
         ClientDao clientDao = new ClientDao();
         OrderDao orderDao = new OrderDao();
 
-        clientDao.deleteById(1L);
+        Order order = orderDao.findById(2L);
 
+        Client client = clientDao.findById(order.getId());
+
+        System.out.println(client);
 
     }
         
